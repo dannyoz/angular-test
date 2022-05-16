@@ -5,7 +5,6 @@ export enum RegionNames {
   europe = 'europe',
   asia = 'asia',
 }
-
 export interface Region {
   name: string;
   countries: Country[];

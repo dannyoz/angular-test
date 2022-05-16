@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { RegionsComponent } from './regions/regions.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RegionsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
