@@ -35,13 +35,14 @@ const initialState: State = {
 
 export const reducer = (state = initialState, action: Actions): State => {
   switch (action.type) {
-    // case ActionTypes.getCountries:
-    //   const region: Region = action.payload;
-    //   const updatedRegions = {
-    //     ...state.regions,
-    //   };
-    //   updatedRegions[region.name] = action.payload;
-    //   return { ...state, regions: updatedRegions };
+    case ActionTypes.setCountries:
+      const region: Region = action.payload;
+      const updatedRegions = {
+        ...state.regions,
+      };
+
+      updatedRegions[region.name] = action.payload;
+      return { ...state, regions: updatedRegions };
 
     default:
       return state;

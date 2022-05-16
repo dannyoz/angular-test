@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { reducer } from './state/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { Effects } from './state/effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, RegionsComponent],
@@ -26,6 +27,7 @@ import { Effects } from './state/effects';
     EffectsModule.forRoot([Effects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     BrowserAnimationsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatCardModule,
     MatSelectModule,

@@ -25,9 +25,8 @@ export class RegionsComponent implements OnInit, OnDestroy {
       this.regions = regions;
     });
 
-    this.form?.valueChanges.subscribe((form) => {
-      console.log(form);
-      this.store.dispatch(new GetCountries(form.selectedRegion));
+    this.form?.valueChanges.subscribe((formData) => {
+      this.store.dispatch(new GetCountries(formData.selectedRegion));
     });
   }
 
