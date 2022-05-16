@@ -1,1 +1,13 @@
-<p>regions works!</p>
+<mat-card>
+  <p>REGIONS</p>
+  <form *ngIf="form" [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Please select a region</mat-label>
+      <mat-select formControlName="selectedRegion">
+        <mat-option *ngFor="let region of regions" [value]="region">{{
+          region
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-card>

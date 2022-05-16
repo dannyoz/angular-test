@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { OperatorFunction } from 'rxjs';
 import { Region } from './reducer';
 
 export enum ActionTypes {

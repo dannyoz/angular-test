@@ -1,4 +1,4 @@
-import { Country } from 'src/shared/interfaces';
+import { Country } from 'src/app/shared/interfaces';
 import { Actions, ActionTypes } from './actions';
 
 export enum RegionNames {
@@ -14,7 +14,7 @@ type Regions = {
   [key: string]: Region;
 };
 
-interface State {
+export interface State {
   selectedRegion: string;
   regions: Regions;
 }
@@ -35,13 +35,13 @@ const initialState: State = {
 
 export const reducer = (state = initialState, action: Actions): State => {
   switch (action.type) {
-    case ActionTypes.getCountries:
-      const region: Region = action.payload;
-      const updatedRegions = {
-        ...state.regions,
-      };
-      updatedRegions[region.name] = action.payload;
-      return { ...state, regions: updatedRegions };
+    // case ActionTypes.getCountries:
+    //   const region: Region = action.payload;
+    //   const updatedRegions = {
+    //     ...state.regions,
+    //   };
+    //   updatedRegions[region.name] = action.payload;
+    //   return { ...state, regions: updatedRegions };
 
     default:
       return state;
