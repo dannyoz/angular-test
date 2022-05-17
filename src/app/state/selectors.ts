@@ -7,3 +7,8 @@ export const getRegions = createSelector(
   getState,
   (state) => Object.keys(state?.regions) || null
 );
+
+export const getSelectedRegionCountries = createSelector(
+  getState,
+  (state) => state.regions[state.selectedRegion]?.countries || null
+);

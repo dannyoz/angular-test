@@ -4,6 +4,7 @@ import { Region } from './reducer';
 export enum ActionTypes {
   getCountries = '[APP] getCountries',
   setCountries = '[APP] setCountries',
+  setSelectedRegion = '[APP] setSelectedCountry',
 }
 
 export class GetCountries implements Action {
@@ -16,4 +17,9 @@ export class SetCountries implements Action {
   constructor(public payload: Region) {}
 }
 
-export type Actions = GetCountries | SetCountries;
+export class SetSelectedRegion implements Action {
+  readonly type = ActionTypes.setSelectedRegion;
+  constructor(public payload: string) {}
+}
+
+export type Actions = GetCountries | SetCountries | SetSelectedRegion;

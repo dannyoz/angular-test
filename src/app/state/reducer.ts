@@ -44,6 +44,9 @@ export const reducer = (state = initialState, action: Actions): State => {
       updatedRegions[region.name] = action.payload;
       return { ...state, regions: updatedRegions };
 
+    case ActionTypes.setSelectedRegion:
+      return { ...state, selectedRegion: action.payload };
+
     default:
       return state;
   }

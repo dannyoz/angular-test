@@ -12,13 +12,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+
 import { reducer } from './state/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { Effects } from './state/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { CountryComponent } from './country/country.component';
 
 @NgModule({
-  declarations: [AppComponent, RegionsComponent],
+  declarations: [AppComponent, RegionsComponent, CountryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatCardModule,
     MatSelectModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

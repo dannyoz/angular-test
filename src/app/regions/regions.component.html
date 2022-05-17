@@ -1,5 +1,5 @@
 <mat-card>
-  <p>REGIONS</p>
+  <h1>Country picker</h1>
   <form *ngIf="form" [formGroup]="form">
     <mat-form-field appearance="fill">
       <mat-label>Please select a region</mat-label>
@@ -9,5 +9,25 @@
         }}</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <mat-form-field
+      class="margin-left"
+      appearance="fill"
+      *ngIf="selectedRegionCountries?.length"
+    >
+      <mat-label>Please select a country</mat-label>
+      <mat-select formControlName="selectedCountry">
+        <mat-option
+          *ngFor="let country of selectedRegionCountries"
+          [value]="country"
+          >{{ country.name }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
   </form>
+
+  <app-country
+    [country]="form?.value.selectedCountry"
+    *ngIf="form?.value.selectedCountry"
+  ></app-country>
 </mat-card>
